@@ -57,21 +57,49 @@
             text-align: center;
         }
 
+               /* 在你现有的 .main-text 样式中修改 */
         .main-text {
-            font-size: 4.5rem;
+            font-size: 2.5rem; /* 默认大小，适用于中等屏幕 */
             font-weight: 900;
-            margin-bottom: 2rem;
-            text-shadow: 0 0 30px rgba(255, 105, 180, 0.8),
-                         0 0 60px rgba(255, 105, 180, 0.5),
-                         0 0 90px rgba(255, 105, 180, 0.3);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.8),
+                         0 0 40px rgba(255, 105, 180, 0.5);
             animation: glow 2s ease-in-out infinite alternate;
         }
-
+        
+        /* 在你现有的 .sub-text 样式中修改 */
         .sub-text {
-            font-size: 2.5rem;
+            font-size: 1.5rem; /* 默认大小 */
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             opacity: 0.9;
+        }
+        
+        /* ！！！新增媒体查询，必须放在样式表的最后！！！ */
+        /* 针对大屏幕（如平板、电脑） */
+        @media (min-width: 768px) {
+            .main-text {
+                font-size: 4.5rem; /* 在大屏幕上使用原来炫酷的大字号 */
+                margin-bottom: 2rem;
+            }
+            .sub-text {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        /* 针对小屏幕（手机） */
+        @media (max-width: 480px) {
+            .main-text {
+                font-size: 2rem; /* 在手机上使用更合适的字号 */
+                line-height: 1.2;
+            }
+            .sub-text {
+                font-size: 1.2rem;
+            }
+            .instructions, .particles-count {
+                font-size: 0.8rem; /* 缩小说明文字 */
+            }
         }
 
         .particles-count {
@@ -559,3 +587,4 @@
     </script>
 </body>
 </html>
+
