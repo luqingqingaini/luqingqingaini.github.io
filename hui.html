@@ -1,4 +1,5 @@
-
+# 创建HTML文件：exam_blessing_advanced.html
+html_content = '''
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -160,7 +161,7 @@
         <canvas id="particle-canvas"></canvas>
         <div id="ui">
             <div class="blessing-container">
-                <div class="main-text floating">慧❤❤❤：
+                <div class="main-text floating">慧❤❤，
                 元旦快乐！</div>
                 <div class="sub-text">心有千玺 · 劲有莎莎</div>
                 <div class="sub-text">诚心耕耘 · 迎难而上</div>
@@ -192,12 +193,12 @@
             constructor(x, y, color = null) {
                 this.x = x;
                 this.y = y;
-                this.size = Math.random() * 5 + 2;
+                this.size = Math.random() * 8 + 4;
                 this.speedX = Math.random() * 6 - 3;
                 this.speedY = Math.random() * 6 - 3;
                 this.color = color || `hsl(${Math.random() * 360}, 100%, 70%)`;
                 this.life = 1;
-                this.decay = Math.random() * 0.02 + 0.005;
+                this.decay = Math.random() * 0.01 + 0.002;
                 this.gravity = 0.05;
                 this.waveOffset = Math.random() * Math.PI * 2;
                 this.waveSpeed = Math.random() * 0.05 + 0.02;
@@ -240,12 +241,12 @@
                 this.x = x;
                 this.y = y;
                 this.particles = [];
-                this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                this.color = `hsl(${Math.random() * 360}, 100%, 70%, 60%)`;
                 this.createExplosion();
             }
 
             createExplosion() {
-                const particleCount = Math.floor(Math.random() * 100) + 150;
+                const particleCount = Math.floor(Math.random() * 300) + 350;
                 for (let i = 0; i < particleCount; i++) {
                     const angle = Math.random() * Math.PI * 2;
                     const speed = Math.random() * 5 + 2;
@@ -554,7 +555,7 @@
             const x = Math.random() * (mainCanvas.width - 200) + 100;
             const y = Math.random() * (mainCanvas.height - 200) + 100;
             particles.addFirework(x, y);
-        }, 1500);
+        }, 500);
 
         // 触摸事件支持
         window.addEventListener('touchmove', (e) => {
@@ -596,4 +597,10 @@
     </script>
 </body>
 </html>
+'''
 
+# 保存HTML文件
+with open('exam_blessing_advanced.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("HTML特效文件已创建: exam_blessing_advanced.html")
